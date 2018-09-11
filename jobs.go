@@ -34,6 +34,13 @@ var jobs = sdk.Jobs{
 		Title:       "Create K8S Namespace",
 		Description: "Creates a new Kubernetes namespace for the new test environment.",
 		DependsOn:   []string{"DB Migration"},
+		Args: sdk.Arguments{
+			sdk.Argument{
+				Description: "Enter the name for the namespace",
+				Type:        sdk.TextFieldInp,
+				Key:         "namespace",
+			},
+		},
 	},
 	sdk.Job{
 		Handler:     CreateDeployment,
