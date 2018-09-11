@@ -21,7 +21,7 @@ var jobs = sdk.Jobs{
 		Handler:     MigrateDB,
 		Title:       "DB Migration",
 		Description: "Imports newest test data dump and migrates to newest version.",
-		DependsOn:   []string{"Create DB User", "job does not exist"},
+		DependsOn:   []string{"Create DB User"},
 		Args: sdk.Arguments{
 			sdk.Argument{
 				Type: sdk.VaultInp,
